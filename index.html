@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- fontawesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- GLightbox CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<!-- MixItUp CDN -->
+<script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
+
+  <link rel="stylesheet" href="./dist/style.css">
+ </head>
+<body>
+
+    <!-- Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .header-section,.hero-section{
+          width: 100%;
+        }
+          .fade-section {
+      transition: all 0.7s ease-out;
+    }
+
+   
+    </style>
+</head>
+<body>
+<!-- Header Section -->
+<header class="header-section relative bg-teal-500 text-white shadow-md z-50">
+  <div class="container mx-auto flex justify-between items-center p-4">
+
+    <h1 class="text-2xl font-bold">TravelSite</h1>
+
+    <button id="menu-btn" class="md:hidden focus:outline-none z-50">
+      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" 
+           class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="close" xmlns="http://www.w3.org/2000/svg" 
+           class="h-7 w-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <ul id="menu" 
+        class="hidden absolute top-full left-0 w-full bg-teal-500 
+               flex-col md:flex md:static md:flex-row md:space-x-6 
+               md:w-auto text-white rounded-b-lg md:rounded-none">
+      <li><a href="#home" class="block px-4 py-2 hover:bg-teal-600 md:hover:bg-transparent">Home</a></li>
+      <li><a href="#about" class="block px-4 py-2 hover:bg-teal-600 md:hover:bg-transparent">About</a></li>
+      <li><a href="#services" class="block px-4 py-2 hover:bg-teal-600 md:hover:bg-transparent">Services</a></li>
+      <li><a href="#gallery" class="block px-4 py-2 hover:bg-teal-600 md:hover:bg-transparent">Gallery</a></li>
+      <li><a href="#blog" class="block px-4 py-2 hover:bg-teal-600 md:hover:bg-transparent">Blogs</a></li>
+      <li><a href="#contact" class="block px-4 py-2 hover:bg-teal-600 md:hover:bg-transparent">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section id="hero" 
+  class="hero-section h-screen flex items-center justify-center bg-cover bg-center pt-20 md:pt-24"
+  style="background-image: url('./src/img/istockphoto-1414912230-612x612.webp');">
+  <div class="container mx-auto flex flex-col items-center justify-center text-center text-white z-10 relative">
+    <h1 class="text-4xl md:text-6xl font-bold">Explore the World</h1>
+    <p class="text-lg md:text-2xl mt-4">Discover amazing places and adventures</p>
+    <button class="mt-6 px-6 py-3 bg-teal-500 rounded-full hover:bg-teal-600 transition">View Packages</button>
+  </div>
+</section>
+<!-- Example Sections -->
+   <section id="about" class="py-20 px-6 md:px-12 container mx-auto fade-section opacity-0 translate-y-10 ">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">About Our Agency</h2>
+            <p class="text-lg text-gray-600 leading-relaxed ">
+                Wanderlust Adventures is dedicated to crafting unique and personalized travel experiences. From serene beach getaways to thrilling mountain expeditions, our expert team handles every detail, ensuring your journey is seamless and memorable. We believe travel is not just about visiting places, but about living and experiencing the world's diverse cultures.
+            </p>
+        </div>
+        <div class="grid grid-cols-3 gap-5 mt-5">
+        <img src="./src/img/istockphoto-1096035138-612x612.webp" alt="">
+        <img src="./src/img/premium_photo-1681922761648-d5e2c3972982.avif" alt="">
+        <img src="./src/img/photo-1729606558539-373e3491c663.avif" alt="">
+        </div>
+    </section>
+<!-- features -->
+     <section id="featured" class="py-20 px-6 md:px-12 bg-gray-50 fade-section opacity-0 translate-y-10 ">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Popular Packages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Package Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden group">
+                    <img src="./src/img/istockphoto-1270396110-612x612.webp" alt="Mountain Expedition" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Mountain Expedition</h3>
+                        <p class="text-gray-600 mb-4">Experience the thrill of a lifetime with our guided trek through the Himalayas.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-teal-500">$1,500</span>
+                            <button class="bg-teal-500 text-white py-2 px-6 rounded-full font-medium hover:bg-teal-600 transition-colors duration-300">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Package Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden group">
+                    <img src="src/img/photo-1552873547-b88e7b2760e2.avif" alt="Tropical Beach Getaway" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Tropical Beach Getaway</h3>
+                        <p class="text-gray-600 mb-4">Relax on pristine white-sand beaches with crystal-clear waters in the Maldives.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-teal-500">$1,200</span>
+                            <button class="bg-teal-500 text-white py-2 px-6 rounded-full font-medium hover:bg-teal-600 transition-colors duration-300">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Package Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden group">
+                    <img src="./src/img/istockphoto-2157271637-612x612.webp" alt="European City Tour" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">European City Tour</h3>
+                        <p class="text-gray-600 mb-4">Explore the historic landmarks and vibrant culture of Paris and Rome.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-teal-500">$2,100</span>
+                            <button class="bg-teal-500 text-white py-2 px-6 rounded-full font-medium hover:bg-teal-600 transition-colors duration-300">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+              <!-- Services Section -->
+<section id="services"class="py-20 fade-section opacity-0 translate-y-10">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-12">Our Services</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Flight Booking -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
+        <div class="text-indigo-500 mb-4 text-4xl">
+          ✈️
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Flight Booking</h3>
+        <p class="text-gray-600">Book cheap and fast flights anywhere in the world.</p>
+      </div>
+
+      <!-- Hotel Reservation -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
+        <div class="text-indigo-500 mb-4 text-4xl">
+          🏨
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Hotel Reservation</h3>
+        <p class="text-gray-600">Easily confirm bookings at world-class hotels and resorts.</p>
+      </div>
+
+      <!-- Visa Assistance -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
+        <div class="text-indigo-500 mb-4 text-4xl">
+          🛂
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Visa Assistance</h3>
+        <p class="text-gray-600">Our special help makes the visa process easy and fast.</p>
+      </div>
+
+      <!-- Custom Tours -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
+        <div class="text-indigo-500 mb-4 text-4xl">
+          🌍
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Custom Tours</h3>
+        <p class="text-gray-600">Customized tour packages according to your preferences.</p>
+      </div>
+
+    </div>
+  </div>
+</section>        
+<!-- gallery -->
+<section id="gallery" class="py-20 bg-gray-50 fade-section opacity-0 translate-x-10">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-12">Our Gallery</h2>
+    <!-- Filter Buttons -->
+    <div class="flex justify-center mb-8 space-x-4">
+      <button class="filter-btn px-4 py-2 bg-teal-500 text-white rounded" data-filter="all">All</button>
+      <button class="filter-btn px-4 py-2 bg-gray-200 rounded" data-filter=".beach">Beach</button>
+      <button class="filter-btn px-4 py-2 bg-gray-200 rounded" data-filter=".city">City</button>
+      <button class="filter-btn px-4 py-2 bg-gray-200 rounded" data-filter=".mountain">Mountain</button>
+    </div>
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mix-container">
+      <!-- Example Item -->
+      <div class="mix beach relative cursor-pointer">
+        <img src="./src/img/istockphoto-104659488-612x612.jpg" alt="Beach 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">Beach Paradise</div>
+        <a href="./src/img/istockphoto-104659488-612x612.jpg" class="glightbox"></a>
+      </div>
+        <div class="mix beach relative cursor-pointer">
+        <img src="./src/img/premium_photo-1670002464796-3a3136fe8808.avif" alt="Beach 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">Sunny Shores</div>
+        <a href="./src/img/premium_photo-1670002464796-3a3136fe8808.avif" class="glightbox"></a>
+      </div>
+      <div class="mix city relative cursor-pointer">
+        <img src="./src/img/premium_photo-1719066378494-83d343dbe9bb.avif" alt="City 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">Urban Lights</div>
+        <a href="./src/img/premium_photo-1719066378494-83d343dbe9bb.avif" class="glightbox"></a>
+      </div>
+        <div class="mix city relative cursor-pointer">
+        <img src="./src/img/premium_photo-1683120756391-5eded4fd1718.avif" alt="City 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">Alpine Trail</div>
+        <a href="./src/img/premium_photo-1683120756391-5eded4fd1718.avif" class="glightbox"></a>
+      </div>
+      <div class="mix mountain relative cursor-pointer">
+        <img src="./src/img/istockphoto-2153573059-612x612.webp" alt="Mountain 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">Rocky Peaks</div>
+        <a href="./src/img/istockphoto-2153573059-612x612.webp" class="glightbox"></a>
+      
+      </div>
+        <div class="mix mountain relative cursor-pointer">
+        <img src="./src/img/premium_photo-1661935316058-eeceb07b999b.avif" alt="Mountain 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">Misty Mountains</div>
+        <a href="./src/img/premium_photo-1661935316058-eeceb07b999b.avif" class="glightbox"></a>
+        
+      </div>
+         <div class="mix mountain relative cursor-pointer">
+        <img src="./src/img/istockphoto-2170600542-612x612.webp" alt="Mountain 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">Skyline View</div>
+        <a href="./src/img/istockphoto-2170600542-612x612.webp" class="glightbox"></a>
+        
+      </div>
+        <div class="mix city relative cursor-pointer">
+        <img src="./src/img/premium_photo-1719066378181-0d5f2a8eefbb.avif" alt="Mountain 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">City Streets</div>
+        <a href="./src/img/premium_photo-1719066378181-0d5f2a8eefbb.avif" class="glightbox"></a>
+        
+      </div>
+        <div class="mix beach relative cursor-pointer">
+        <img src="./src/img/photo-1729606558539-373e3491c663.avif" alt="Mountain 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">Crystal Waves</div>
+        <a href="./src/img/photo-1729606558539-373e3491c663.avif" class="glightbox"></a>
+        
+      </div>
+        <div class="mix city relative cursor-pointer">
+        <img src="./src/img/istockphoto-2164616201-612x612.jpg" alt="Mountain 1" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">Downtown Vibes</div>
+        <a href="./src/img/istockphoto-2164616201-612x612.jpg" class="glightbox"></a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- blog -->
+<section id="blog" class="py-20 bg-gray-50 fade-section opacity-0 translate-y-10">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12">Our Travel Blog</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Blog Card 1 -->
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+        <img src="./src/img/istockphoto-1409530872-612x612 (1).webp" alt="Blog 1" class="w-full h-48 object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold mb-2 hover:text-indigo-600">Top 10 Beaches to Visit in 2025</h3>
+          <p class="text-gray-600 mb-4 text-sm">Explore the most breathtaking beaches around the world and plan your perfect getaway.</p>
+          <a href="#" class="text-teal-600 font-semibold hover:underline text-sm">Read More →</a>
+        </div>
+      </div>
+      
+      <!-- Blog Card 2 -->
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+        <img src="./src/img/istockphoto-2178587683-612x612.webp" alt="Blog 2" class="w-full h-48 object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold mb-2 hover:text-indigo-600">A Guide to Solo Travel Safely</h3>
+          <p class="text-gray-600 mb-4 text-sm">Tips and tricks to enjoy your solo adventures safely and confidently.</p>
+          <a href="#" class="text-teal-600 font-semibold hover:underline text-sm">Read More →</a>
+        </div>
+      </div>
+      
+      <!-- Blog Card 3 -->
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+        <img src="src/img/photo-1600255821058-c4f89958d700.avif" alt="Blog 3" class="w-full h-48 object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold mb-2 hover:text-indigo-600">Hidden Gems in Europe</h3>
+          <p class="text-gray-600 mb-4 text-sm">Discover lesser-known but amazing destinations across Europe for your next trip.</p>
+          <a href="#" class="text-teal-600 font-semibold hover:underline text-sm">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- whoose us -->
+
+<section id="why-choose-us" class="fade-section opacity-0 translate-y-10">
+  <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Travel with confidence, anywhere.</h2>
+      <p class="mt-3 text-base text-gray-600 dark:text-gray-300 ">We combine expert planning, transparent pricing, and 24/7 support to make your journey effortless—from first click to flight back home.</p>
+    </div>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="group relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-gray-800 dark:bg-gray-950">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 group-hover:scale-105 group-hover:bg-teal-100 dark:bg-teal-900/30">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 text-teal-600 dark:text-teal-400"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.94 9h-3.17a15.9 15.9 0 00-1.1-5.02A8.02 8.02 0 0119.94 11zM12 4a13.9 13.9 0 011.77 7H10.2A13.9 13.9 0 0112 4zM8.33 4.98A15.9 15.9 0 009.43 11H6.26a8.02 8.02 0 012.07-6.02zM4.06 13h3.17a15.9 15.9 0 001.1 5.02A8.02 8.02 0 014.06 13zM12 20a13.9 13.9 0 01-1.8-7h3.58A13.9 13.9 0 0112 20zm3.67-1.02A15.9 15.9 0 0014.57 13h3.17a8.02 8.02 0 01-2.07 5.98z"/></svg>
+        </div>
+        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Handpicked Destinations</h3>
+        <p class="mt-2 text-lg leading-6 text-gray-600 dark:text-gray-300">We curate routes and stays that balance comfort, culture, and value—no random listings.</p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Local-expert recommendations</li>
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Verified partners & guides</li>
+        </ul>
+      </div>
+    
+      <div class="group relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-gray-800 dark:bg-gray-950">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 group-hover:scale-105 group-hover:bg-teal-100 dark:bg-teal-900/30">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 text-teal-600 dark:text-teal-400"><path d="M5 8l3-6 3 6 6 3-6 3-3 6-3-6-6-3 6-3zM16 4l1-2 1 2 2 1-2 1-1 2-1-2-2-1 2-1zM20 14l1-2 1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg>
+        </div>
+        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Transparent Pricing</h3>
+        <p class="mt-2 text-lg leading-6 text-gray-600 dark:text-gray-300">Upfront costs with no hidden fees. What you see is what you pay—always.</p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Best-price match guarantee</li>
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Flexible payment options</li>
+        </ul>
+      </div>
+      
+      <div class="group relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-gray-800 dark:bg-gray-950">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 group-hover:scale-105 group-hover:bg-teal-100 dark:bg-teal-900/30">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 text-teal-600 dark:text-teal-400"><path d="M12 2a9 9 0 00-9 9v3a4 4 0 004 4h1v-6H5v-1a7 7 0 1114 0v1h-3v6h1a4 4 0 004-4v-3a9 9 0 00-9-9z"/></svg>
+        </div>
+        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">24/7 Human Support</h3>
+        <p class="mt-2 text-lg leading-6 text-gray-600 dark:text-gray-300">Real people, real-time solutions—before, during, and after your trip.</p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> WhatsApp, phone & email</li>
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Instant itinerary updates</li>
+        </ul>
+      </div>
+      
+      <div class="group relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-gray-800 dark:bg-gray-950">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 group-hover:scale-105 group-hover:bg-teal-100 dark:bg-teal-900/30">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 text-teal-600 dark:text-teal-400"><path d="M12 2l7 3v6c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V5l7-3zm0 6l-4 4 1.4 1.4L12 10.8l2.6 2.6L16 12l-4-4z"/></svg>
+        </div>
+        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Safety First</h3>
+        <p class="mt-2 text-lg leading-6 text-gray-600 dark:text-gray-300">From travel insurance to vetted transport—we prioritize your peace of mind.</p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Secure bookings & data</li>
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Licensed, insured partners</li>
+        </ul>
+      </div>
+      
+      <div class="group relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-gray-800 dark:bg-gray-950">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 group-hover:scale-105 group-hover:bg-teal-100 dark:bg-teal-900/30">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 text-teal-600 dark:text-teal-400"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm13 6H4v12h16V8z"/></svg>
+        </div>
+        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Flexible Plans</h3>
+        <p class="mt-2 text-lg leading-6 text-gray-600 dark:text-gray-300">Change of plans? No stress. Enjoy free rescheduling on eligible packages.</p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Easy cancellations</li>
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Date & traveler changes</li>
+        </ul>
+      </div>
+      
+      <div class="group relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-gray-800 dark:bg-gray-950">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 group-hover:scale-105 group-hover:bg-teal-100 dark:bg-teal-900/30">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 text-teal-600 dark:text-teal-400"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Loved by Travelers</h3>
+        <p class="mt-2 text-lg leading-6 text-gray-600 dark:text-gray-300">Over 15,000+ happy adventurers and 4.8/5 average rating across platforms.</p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Easy cancellations</li>
+          <li class="flex items-start gap-2"><span class="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-teal-500"></span> Date & traveler changes</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Trust & Stats Bar -->
+    <div class="mt-12 grid items-center gap-6 rounded-2xl bg-teal-500 text-white p-6 shadow-sm ring-1
+     ring-gray-200 dark:bg-gray-950 dark:ring-gray-800 sm:grid-cols-3">
+      <div class="text-center">
+        <div class="text-3xl font-bold ">15k+</div>
+        <div class="text-sm  dark:text-gray-300">Happy Travelers</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold ">120+</div>
+        <div class="text-sm ">Destinations</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold ">4.8/5</div>
+        <div class="text-sm ">Average Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- testmonial -->
+<section class="py-20 bg-gray-50 fade-section opacity-0 translate-x-10">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-12">What Our Clients Say</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Testimonial 1 -->
+      <div class="bg-white hover:bg-teal-500 text-black hover:text-white p-16 rounded-2xl shadow-lg">
+        <p class=" mb-4">"Amazing experience! The trip was perfectly organized and unforgettable."</p>
+        <div class="flex items-center justify-center space-x-4">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client 1" class="w-12 h-12 rounded-full">
+          <div class="text-left">
+            <h4 class="font-semibold ">Emily R.</h4>
+            <p class="text-sm">Traveler</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+         <div class="bg-teal-500 text-white p-16 rounded-2xl shadow-lg">
+        <p class=" mb-4">"Professional and friendly team. Made our vacation stress-free."</p>
+        <div class="flex items-center justify-center space-x-4">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client 3" class="w-12 h-12 rounded-full">
+          <div class="text-left">
+            <h4 class="font-semibold">Jone Dou.</h4>
+            <p class="text-sm">Adventurer</p>
+        </div>
+      </div>
+    </div>
+      <!-- Testimonial 3 -->
+      <div class="bg-white hover:bg-teal-500 text-black hover:text-white p-16 rounded-2xl shadow-lg">
+        <p class=" mb-4">"Professional and friendly team. Made our vacation stress-free."</p>
+        <div class="flex items-center justify-center space-x-4">
+          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Client 3" class="w-12 h-12 rounded-full">
+          <div class="text-left">
+            <h4 class="font-semibold">Sophia L.</h4>
+            <p class="text-sm">Adventurer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20 fade-section opacity-0 translate-y-10 ">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Frequently Asked Questions</h2>
+
+    <div class="space-y-4 max-w-2xl mx-auto">
+
+      <!-- FAQ 1 -->
+      <div class="bg-white rounded-xl shadow-lg">
+        <button class="faq-question w-full text-left px-6 py-4 font-semibold flex justify-between items-center">
+          How do I book a package?
+          <span class="faq-icon text-xl">+</span>
+        </button>
+        <div class="faq-answer px-6 pb-4 hidden text-gray-600">
+          You can book a package by clicking on "Book Now" on your desired tour package and following the instructions.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="bg-white rounded-xl shadow-lg">
+        <button class="faq-question w-full text-left px-6 py-4 font-semibold flex justify-between items-center">
+          Can I customize my tour?
+          <span class="faq-icon text-xl">+</span>
+        </button>
+        <div class="faq-answer px-6 pb-4 hidden text-gray-600">
+          Yes! Our custom tours allow you to choose destinations, dates, and activities as per your preference.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="bg-white rounded-xl shadow-lg">
+        <button class="faq-question w-full text-left px-6 py-4 font-semibold flex justify-between items-center">
+          What is the cancellation policy?
+          <span class="faq-icon text-xl">+</span>
+        </button>
+        <div class="faq-answer px-6 pb-4 hidden text-gray-600">
+          Cancellation is allowed up to 7 days before departure for a full refund. Some packages may have specific rules.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="bg-white rounded-xl shadow-lg">
+        <button class="faq-question w-full text-left px-6 py-4 font-semibold flex justify-between items-center">
+          Do you provide visa assistance?
+          <span class="faq-icon text-xl">+</span>
+        </button>
+        <div class="faq-answer px-6 pb-4 hidden text-gray-600">
+          Yes, we assist with visa processing and provide guidance for hassle-free travel.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- contact -->
+
+<footer id="contact" class="bg-teal-500 text-white fade-section opacity-0 translate-y-10">
+  <div class="max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Column 1: Brand -->
+      <div>
+        <h2 class="text-2xl font-bold">TravelSite</h2>
+        <p class="mt-3 text-lg text-teal-100">Explore the world with us. Your journey, our expertise.</p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-lg text-teal-100">
+          <li><a href="#about" class="hover:text-white">About Us</a></li>
+          <li><a href="#services" class="hover:text-white">Our Services</a></li>
+          <li><a href="#packages" class="hover:text-white">Popular Packages</a></li>
+          <li><a href="#gallery" class="hover:text-white">Gallery</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+        <ul class="space-y-2 text-lg text-teal-100">
+          <li>Email: info@travelsite.com</li>
+          <li>Phone: +880 1234 567 890</li>
+          <li>Location: Dhaka, Bangladesh</li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Newsletter -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Subscribe</h3>
+        <form class="flex flex-col sm:flex-row gap-2">
+          <input type="email" placeholder="Your email" class="w-full rounded-lg px-4 py-2 text-black focus:outline-none" required>
+          <button type="submit" class="bg-white text-teal-600 px-4 py-2 rounded-lg font-semibold hover:bg-teal-100 transition-colors">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-teal-400 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between text-lg text-teal-100">
+      <p>&copy; 2025 TravelSite. All rights reserved.</p>
+      <div class="flex space-x-4 mt-4 sm:mt-0">
+        <a href="#" class="hover:text-white">Facebook</a>
+        <a href="#" class="hover:text-white">Instagram</a>
+        <a href="#" class="hover:text-white">Twitter</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+<!-- MixItUp JS -->
+<script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
+
+<!-- GLightbox JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+</body>
+</html>
+

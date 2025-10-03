@@ -1,0 +1,13 @@
+{
+  "name": "tailwind-windows-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tailwindcss -i ./src/style.css -o ./dist/style.css --minify",
+    "watch": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0"
+  }
+}
